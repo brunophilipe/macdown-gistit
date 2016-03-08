@@ -31,6 +31,8 @@ This section serves as a simple walkthrough to how plug-ins work in MacDown unti
 
 A plugin in MacDown is a regular Cocoa [dynamic-loading bundle], with extension `.plugin`. MacDown searches `~/Library/Application Support/MacDown/PlugIns`, and build menu items for loadable bundles inside the directory. A plug-in in invoked when the user clicks on its corresponding menu item.
 
+One caveat is that MacDown does *not* reuse plug-in instances between invocations; a new instance of re-created each time a method is called on the plug-in. This may change in the future, but as a rule of thumb, you should always treat your plug-in as stateless. Store things with `NSUserDefaults` or other persistence solutions.
+
 [dynamic-loading bundle]: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/LoadingCode/LoadingCode.html#//apple_ref/doc/uid/10000052-SW1
 
 
