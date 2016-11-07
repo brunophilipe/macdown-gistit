@@ -1,7 +1,7 @@
 Gist it! for MacDown
 =====================
 
-This repository illustrates a basic example of a plug-in for [MacDown], the open source Markdown editor for OS X. It provides a menu item "Gist it!" that uploads the current document (if available) as a public [GitHub Gist].
+This repository illustrates a basic example of a plug-in for [MacDown], the open source Markdown editor for OS X. It provides a menu item “Gist it!” that uploads the current document (if available) as a public [GitHub Gist].
 
 > Note: Plug-ins are available in MacDown 0.6+ only. This particular plug-in works only under OS X 10.9 or later, not 10.8.
 
@@ -10,12 +10,14 @@ This repository illustrates a basic example of a plug-in for [MacDown], the open
 
 ### Installation
 
-Put the `macdown-gistit.plugin` file in `~/Library/Application Support/MacDown/PlugIns`.
+Put `macdown-gistit.plugin` in `~/Library/Application Support/MacDown/PlugIns`.
 
 ### Usage
 
-Open a document, and select menu item **Plug-ins → Gist it!** to upload. An alert dialog will appear to indicate whether the operation is successful. If the gist is creation successfully, its URL will be copied automatically into your
+Open a document, and select menu item **Plug-ins → Gist it!** to upload. An alert dialog will appear to indicate whether the operation is successful. If the gist is created successfully, its URL will be copied automatically into your
 clipboard, so that you can easily share, or open it inside a browser.
+
+> **Alert!!** This is for demo only. The implementation does not include authentication, and all gists are uploaded anonymously. *You will not be able to delete or modify the Gist. Be careful not to upload anything sensitive.*
 
 ### License
 
@@ -25,13 +27,13 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 
 ## The MacDown Plug-in Architecture
 
-This section serves as a simple walkthrough to how plug-ins work in MacDown until proper documentation is written. Hopefully not by myself. :p
+This section serves as a simple walkthrough on how plug-ins work in MacDown until proper documentation is written. Hopefully not by myself. :p
 
 ### Introduction
 
-A plugin in MacDown is a regular Cocoa [dynamic-loading bundle], with extension `.plugin`. MacDown searches `~/Library/Application Support/MacDown/PlugIns`, and build menu items for loadable bundles inside the directory. A plug-in in invoked when the user clicks on its corresponding menu item.
+A plug-in in MacDown is a regular Cocoa [dynamic-loading bundle], with extension `.plugin`. MacDown searches `~/Library/Application Support/MacDown/PlugIns`, and builds menu items for loadable bundles inside the directory. A plug-in is invoked when the user clicks on its corresponding menu item.
 
-One caveat is that MacDown does *not* reuse plug-in instances between invocations; a new instance of re-created each time a method is called on the plug-in. This may change in the future, but as a rule of thumb, you should always treat your plug-in as stateless. Store things with `NSUserDefaults` or other persistence solutions.
+One caveat is that MacDown does *not* reuse plug-in instances between invocations; a new instance is re-created each time a method is called on the plug-in. This may change in the future, but as a rule of thumb, you should always treat your plug-in as stateless. Store things with `NSUserDefaults` or other persistence solutions.
 
 [dynamic-loading bundle]: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/LoadingCode/LoadingCode.html#//apple_ref/doc/uid/10000052-SW1
 
