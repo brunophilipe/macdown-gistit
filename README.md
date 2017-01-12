@@ -56,6 +56,14 @@ The return value indicates whether the plug-in is invoked successfully.
 
 This method may be invoked in the UI thread. Therefore, it is strongly recommended you push long operations into background threads, and/or run them asynchronously.
 
+### Touch Bar
+
+MacDown will install an extra Touch Bar button for your plugin so that the user can quickly invoke it. This is done automatically and you don't have to do/change anything. The button will be available to be installed in the Touch Bar by the user, along with the other extra buttons, from the `View > Customize Touch Bar…` menu.
+
+If you would like, you can tell MacDown to use an image for your plugin's Touch Bar button instead of a text button. All you have to do is include an image with a height of at most 45px and a reasonable width (around 50px-140px is perfect) to you plugin's bundle. Make sure the image is included in the "Copy Bundle Resources" for your plugin's build phase.
+
+If it is a gray-scale image, make sure it's called `TouchBarImageTemplate@2x.png`. If it is a colored image, make sure it's called `TouchBarImage@2x.png`.
+
 ### Tips
 
 MacDown uses the standard OS X document-based application structure. This means that you can get almost all information via the standard `NSDocumentController` API. Refer to the official documentation for more detail.
