@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15892BA81E26FBB00064328A /* TouchBarImageTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15892BA61E26FBB00064328A /* TouchBarImageTemplate@2x.png */; };
 		1F62698C1C8E98B000E87C30 /* MacDownGistItController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F62698B1C8E98B000E87C30 /* MacDownGistItController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15892BA61E26FBB00064328A /* TouchBarImageTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchBarImageTemplate@2x.png"; sourceTree = "<group>"; };
 		1F6269811C8E987F00E87C30 /* macdown-gistit.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macdown-gistit.plugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6269841C8E987F00E87C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F62698A1C8E98B000E87C30 /* MacDownGistItController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDownGistItController.h; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 				1F6269841C8E987F00E87C30 /* Info.plist */,
 				1F62698A1C8E98B000E87C30 /* MacDownGistItController.h */,
 				1F62698B1C8E98B000E87C30 /* MacDownGistItController.m */,
+				15892BA61E26FBB00064328A /* TouchBarImageTemplate@2x.png */,
 			);
 			path = "macdown-gistit";
 			sourceTree = "<group>";
@@ -110,6 +113,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15892BA81E26FBB00064328A /* TouchBarImageTemplate@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +255,7 @@
 				1F6269891C8E987F00E87C30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
